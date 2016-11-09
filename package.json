@@ -3,6 +3,7 @@
   "version": "0.2.2",
   "description": "BPMN 2.0 execution engine",
   "main": "./lib/public.js",
+  "types": "./lib/public.d.ts",
   "keywords": [
     "bpmn",
     "workflow",
