@@ -50,31 +50,6 @@ export class Bpmn {
 }
 
 export class BPMNProcess{
-	// processId: string;
-	// processDefinition: any;
-	// eventHandler: any;
-	// parentProcess: any;
-	// pendingTimerEvents: any;
-	// deferredEvents: any[];
-	// deferEvents: boolean;
-	// processClient: any;
-	// participants: any;
-	// properties: any;
-	// calledProcesses: any;
-	// logger: any;
-	// transactionLogger: any;
-	// currentTrx: any;
-	// views: any;
-    // state: any;
-    // history: any;
-    // defaultEventHandler: any;
-    // defaultErrorHandler: any;
-    // doneSavingHandler: any;
-    // doneLoadingHandler: any;
-    // onBeginHandler: any;
-    // onEndHandler: any;
-	// _events: any;
-
 	triggerEvent(eventName: string, data?:any): void;
 	taskDone(taskName: string, data?:any): void;
 	getState(): any;
@@ -89,7 +64,6 @@ export class BPMNProcess{
 
 export class ProcessManager {
     constructor(options?: ProcessManagerOptions);
-
 
 	addHandlerFilePath(name: string, handlerFilePath:string): void;
 	addHandlerString(name: string, handlerString:string): void;
