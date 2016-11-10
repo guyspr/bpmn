@@ -34,6 +34,19 @@ interface ProcessManagerOptions{
 	}
 }
 
+interface History {
+	historyEntries: HistoryEntry[];
+	createdAt: Date;
+	finishedAt: Date;
+}
+
+interface HistoryEntry{
+	name: string;
+	type: string;
+	begin: Date;
+	end: Date;
+}
+
 /*~ 
  *~ Classes
  */
@@ -53,7 +66,7 @@ export class BPMNProcess{
 	triggerEvent(eventName: string, data?:any): void;
 	taskDone(taskName: string, data?:any): void;
 	getState(): any;
-	getHistory(): any;
+	getHistory(): History;
 	setProperty(name: string, value:any):void;
 	getProperty(name: string): any;
 	getParentProcess(): BPMNProcess;
@@ -68,6 +81,7 @@ export class ProcessManager {
 	addHandlerFilePath(name: string, handlerFilePath:string): void;
 	addHandlerString(name: string, handlerString:string): void;
 	addHandler(name: string, handler:string): void;
+	addBpmnFilePath(bpmnFilePath: string): void;
 	addBpmnFilePath(bpmnFilePath: string, processHandler:string): void;
 	addBpmnFilePath(bpmnFilePath: string, processHandler:any): void;
 	addBpmnXML(bpmnXml: string, processName: string, processHandler: string): void;
