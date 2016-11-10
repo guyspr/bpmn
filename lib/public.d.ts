@@ -2,7 +2,7 @@
 // Project: bpmn
 // Definitions by: Guy Spronck (https://github.com/guyspronck)
 
-/*~ 
+/*~
  *~ Interfaces
  */
 
@@ -47,19 +47,19 @@ interface HistoryEntry{
 	end: Date;
 }
 
-/*~ 
+/*~
  *~ Classes
  */
 
-export class Bpmn {
-     createUnmanagedProcess(bpmnFilePath: string, callback: (err, process: BPMNProcess) => any): void;
-	 createUnmanagedProcessFromXML(bpmnXML: string, handler: string, callback: (err, process: BPMNProcess) => any): void;
-	 createUnmanagedProcessFromXML(bpmnXML: string, handler: any, callback: (err, process: BPMNProcess) => any): void;
-	 createUnmanagedCollaboratingProcesses(bpmnFilePath: string, callback: (err, process: BPMNProcess) => any): void;
-	 createUnmanagedCollaboratingProcessesFromXML(bpmnXML: string, handler: string, callback: (err, process: BPMNProcess) => any): void;
-	 createUnmanagedCollaboratingProcessesFromXML(bpmnXML: string, handler: any, callback: (err, process: BPMNProcess) => any): void;
-	 mapName2HandlerName(bpmnName:string): string;
-	 getBPMNDefinitions(bpmnFilePath: string, cache: boolean): any;
+declare namespace Bpmn {
+	export function createUnmanagedProcess(bpmnFilePath: string, callback: (err, process: BPMNProcess) => any): void;
+	export function createUnmanagedProcessFromXML(bpmnXML: string, handler: string, callback: (err, process: BPMNProcess) => any): void;
+	export function createUnmanagedProcessFromXML(bpmnXML: string, handler: any, callback: (err, process: BPMNProcess) => any): void;
+	export function createUnmanagedCollaboratingProcesses(bpmnFilePath: string, callback: (err, process: BPMNProcess) => any): void;
+	export function createUnmanagedCollaboratingProcessesFromXML(bpmnXML: string, handler: string, callback: (err, process: BPMNProcess) => any): void;
+	export function createUnmanagedCollaboratingProcessesFromXML(bpmnXML: string, handler: any, callback: (err, process: BPMNProcess) => any): void;
+	export function mapName2HandlerName(bpmnName:string): string;
+	export function getBPMNDefinitions(bpmnFilePath: string, cache: boolean): any;
 }
 
 export class BPMNProcess{
@@ -75,7 +75,7 @@ export class BPMNProcess{
 	setLogLevel(logLevel:string):void;
 }
 
-export class ProcessManager {
+declare class ProcessManager {
     constructor(options?: ProcessManagerOptions);
 
 	addHandlerFilePath(name: string, handlerFilePath:string): void;
@@ -86,7 +86,7 @@ export class ProcessManager {
 	addBpmnFilePath(bpmnFilePath: string, processHandler:any): void;
 	addBpmnXML(bpmnXml: string, processName: string, processHandler: string): void;
 	addBpmnXML(bpmnXml: string, processName: string, processHandler: any): void;
-	
+
 	createProcess(descriptors: string, callback: (err, process: BPMNProcess) => any): void;
 	createProcess(descriptors: Descriptor, callback: (err, process: BPMNProcess) => any): void;
 	createProcess(descriptors: Descriptor[], callback: (err, process: BPMNProcess) => any): void;
