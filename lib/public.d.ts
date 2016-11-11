@@ -49,6 +49,22 @@ interface HistoryEntry{
 	end: Date;
 }
 
+interface ProcessDefinition{
+	bpmnId: string;
+	name: string;
+	flowObjects: any;
+	sequenceFlows: any;
+	processElementIndex: any;
+	sequenceFlowBySourceIndex: any;
+	sequenceFlowByTargetIndex: any;
+	messageFlowBySourceIndex: any;
+	messageFlowByTargetIndex: any;
+	boundaryEventsByAttachmentIndex: any;
+	nameMap: any;
+	isProcessDefinition: boolean;
+	collaboratingParticipants: any;
+}
+
 /*~
  *~ Classes
  */
@@ -68,6 +84,7 @@ declare class BPMNProcess{
 	getHistory(): History;
 	setProperty(name: string, value:any):void;
 	getProperty(name: string): any;
+	getProcessDefinition(): ProcessDefinition;
 	getParentProcess(): BPMNProcess;
 	getParticipantByName(participantName: string): BPMNProcess;
 	setLogLevel(logLevel:number):void;
