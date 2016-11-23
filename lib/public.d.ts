@@ -49,11 +49,18 @@ interface HistoryEntry{
 	end: Date;
 }
 
+interface Lane {
+	bpmnId: string;
+	name: string;
+	flowNodeRefs: string[];
+}
+
 interface ProcessDefinition{
 	bpmnId: string;
 	name: string;
 	flowObjects: any;
 	sequenceFlows: any;
+	lane: Lane;
 	processElementIndex: any;
 	sequenceFlowBySourceIndex: any;
 	sequenceFlowByTargetIndex: any;
