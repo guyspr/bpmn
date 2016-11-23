@@ -94,7 +94,7 @@ export function getBPMNDefinitions(bpmnFilePath: string, cache: boolean): any;
 declare class BPMNProcess{
 	triggerEvent(eventName: string, data?:any): void;
 	taskDone(taskName: string, data?:any): void;
-	getState(): any;
+	getState(): State;
 	getLane(taskName: string): Lane;
 	getHistory(): History;
 	setProperty(name: string, value:any):void;
