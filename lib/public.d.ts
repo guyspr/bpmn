@@ -60,7 +60,7 @@ interface ProcessDefinition{
 	name: string;
 	flowObjects: any;
 	sequenceFlows: any;
-	lane: Lane;
+	lanes: Lane;
 	processElementIndex: any;
 	sequenceFlowBySourceIndex: any;
 	sequenceFlowByTargetIndex: any;
@@ -88,6 +88,7 @@ declare class BPMNProcess{
 	triggerEvent(eventName: string, data?:any): void;
 	taskDone(taskName: string, data?:any): void;
 	getState(): any;
+	getLane(taskName: string): Lane;
 	getHistory(): History;
 	setProperty(name: string, value:any):void;
 	getProperty(name: string): any;
