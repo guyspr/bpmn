@@ -55,6 +55,13 @@ interface Lane {
 	flowNodeRefs: string[];
 }
 
+interface State {
+	tokens: {
+		position: string;
+		owningProcessId: string;
+		}[];
+}
+
 interface ProcessDefinition{
 	bpmnId: string;
 	name: string;
