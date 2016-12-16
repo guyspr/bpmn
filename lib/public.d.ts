@@ -28,7 +28,9 @@ interface ProcessManagerOptions{
 	};
 	bpmnFilePath?: string[];
 	persistencyOptions?: {
-		uri: string;
+		type: string;
+		uri?: string;
+		server?: {};
 	};
 	bpmnXML?: {
 		name: string;
