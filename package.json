@@ -15,7 +15,7 @@
   "dependencies": {
     "async": "0.9.0",
     "bunyan": ">= 0.21.3",
-    "event-store-client": "0.0.10",
+    "event-store-client": "0.0.11",
     "jaguardb": ">= 0.1.3",
     "node-fs": ">= 0.1.5",
     "node-uuid": ">= 1.4.0",
