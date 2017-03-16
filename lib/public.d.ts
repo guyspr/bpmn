@@ -28,6 +28,7 @@ interface ProcessManagerOptions{
 	};
 	bpmnFilePath?: string[];
 	persistencyOptions?: {
+		persistedProcesses?: any;
 		type: string;
 		uri?: string;
 		server?: {};
@@ -35,7 +36,7 @@ interface ProcessManagerOptions{
 	bpmnXML?: {
 		name: string;
 		xml: string;
-	}
+	};
 }
 
 interface History {
